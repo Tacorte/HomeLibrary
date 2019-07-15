@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import ProfileForm
 from django.shortcuts import redirect
+from .models import *
 
 
 def info(request):
@@ -21,14 +22,18 @@ def edit_profile(request):
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
             profile = form.save(commit=False)
-            #profile.name = form.name
-            #profile.surname = request.profile.surname
-            #profile.middle_name = request.profile.middle_name
             profile.save()
             return redirect('user_info')
     else:
         form = ProfileForm(instance=profile)
     return render(request, 'UserInterfaceapp/edit.html', {'form': form})
+
+
+def show_booklist(request):
+    profile = request.user.profile
+    booklist = BookList.objects.filter(user_id= str(profile.user))
+    return render(request, "UserInterfaceapp/booklist.html", {'profile': profile, 'booklist': booklist})
+
 
 
 
