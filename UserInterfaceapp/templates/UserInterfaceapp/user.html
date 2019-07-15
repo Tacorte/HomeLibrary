@@ -1,0 +1,20 @@
+
+
+<html>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <title>User info</title>
+  </head>
+  <body>
+  <div>
+    <a href="{% url 'edit_profile' %}" class="top-menu"><span><p>Edit profile</p></span></a>
+  </div>
+    <p>Username = {{profile.user}} </p>
+    <p>Name = {{profile.name}}</p>
+    <p>Surname = {{profile.surname}}</p>
+    <p>Middle name = {{profile.middle_name}}</p>
+  <a href = "/">Back</a>
+  </body>
+</html>
