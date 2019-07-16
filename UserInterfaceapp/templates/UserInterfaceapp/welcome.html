@@ -6,27 +6,27 @@
 <body>
 <div>
     {% if not user.is_authenticated %}
-        <a href="register">registrate</a>
-        <p><a href="login">login</a></p>
+        <a href="register">Регистрация</a>
+        <p><a href="login">Авторизация</a></p>
     {% endif %}
     {% if user.is_authenticated %}
-        <p><a href="logout">logout</a></p>
+        <p><a href="logout">Выход из аккаунта</a></p>
     {% endif %}
 </div>
 {% if user.is_authenticated %}
     <div>
-        current user: <a href="{% url 'user_info' pk=pr %}">{{user_}}</a>
+        Текущий пользователь: <a href="{% url 'user_info' pk=pr %}">{{user_}}</a>
     </div>
 {% endif %}
 <div>
-    <p>List of registred <a href="{% url 'users_all' %}">users</a></p>
+    <p>Список зарегистрированных <a href="{% url 'users_all' %}">пользователей</a></p>
 </div>
 <div>
-    List of avaliable <a href="{% url 'books_all' %}">books</a>
+    Список доступных <a href="{% url 'books_all' %}">книг</a>
 </div>
 {% if user.is_authenticated %}
     <div>
-        <p>Add new book   <a href="{% url 'book_new' %}">+</a></p>
+        <p>Добавлекние новой книги   <a href="{% url 'book_new' %}">+</a></p>
     </div>
 {% endif %}
 

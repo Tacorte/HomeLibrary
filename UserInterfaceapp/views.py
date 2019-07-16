@@ -16,7 +16,6 @@ def info(request):
 
 
 def edit_profile(request):
-    back = request.META.get('HTTP_REFERER')
     if not request.user.is_authenticated:
         return redirect('main')
     profile = request.user.profile
@@ -28,7 +27,7 @@ def edit_profile(request):
             return redirect('user_info', pk=request.user.pk,)
     else:
         form = ProfileForm(instance=profile)
-    return render(request, 'UserInterfaceapp/edit.html', {'form': form, 'back': back})
+    return render(request, 'UserInterfaceapp/edit.html', {'form': form,})
 
 
 def show_booklist(request, pk):
@@ -43,13 +42,14 @@ def show_booklist(request, pk):
 
 def bookinfo(request, pk):
     back = request.META.get('HTTP_REFERER')
+    user = request.user.profile
     try:
         book = Book_in_library.objects.get(pk=pk)
     except Book_in_library.DoesNotExist:
         return redirect('book_list')
     genres = Book_genre.objects.filter(book=book)
     authors = Book_author.objects.filter(book=book)
-    return render(request, 'UserInterfaceapp/bookinfo.html', {'back': back, 'book': book, 'genres': genres, 'authors': authors})
+    return render(request, 'UserInterfaceapp/bookinfo.html', {'user': user,'back': back, 'book': book, 'genres': genres, 'authors': authors})
 
 
 def user(request, pk):
@@ -62,23 +62,21 @@ def user(request, pk):
 
 
 def allusers(request):
-    back = request.META.get('HTTP_REFERER')
     users = Profile.objects.all()
-    return render(request, 'UserInterfaceapp/allusers.html', {'back': back, 'users': users})
+    return render(request, 'UserInterfaceapp/allusers.html', {'users': users})
 
 
 def allbooks(request):
-    back = request.META.get('HTTP_REFERER')
     books = Book_in_library.objects.all()
     if request.method == "GET":
-        return render(request, 'UserInterfaceapp/allbooks.html', {'back': back, 'books': books})
+        return render(request, 'UserInterfaceapp/allbooks.html', {'books': books})
     if request.method == "POST":
         queryset = Book_in_library.objects.all()
         q = request.POST.get("q")
         object_list = None
         if q:
             object_list = queryset.filter(Q(title__icontains=q))
-        return render(request, 'UserInterfaceapp/allbooks.html', {'back': back, 'books': books, 'object_list': object_list})
+        return render(request, 'UserInterfaceapp/allbooks.html', {'books': books, 'object_list': object_list})
 
 
 @login_required

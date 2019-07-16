@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Пользователи</title>
 </head>
 <body>
+<div>
+    Зарегистрированные пользователи:
+</div>
     {% for user in users %}
         <div>
             <a href="{% url 'user_info' pk=user.pk %}">{{ user }}</a>
 
         </div>
     {% endfor %}
-    <a href = "{{back}}">Back</a>
+<div>
+    <p><a href = "/">Back</a></p>
+</div>
+
 </body>
 </html>

@@ -9,13 +9,21 @@
 
 </head>
 <body>
+    <div>
+        {% if not booklist %}
+            В личном каталоге пользователя <a href="{% url 'user_info' pk=user.pk %}">{{ user }}</a> нет книг
+        {% endif %}
+    </div>
+    <div>
+        Имя | Название книги | Категория
+    </div>
     {% for list in booklist %}
-        <div> {{ list.user_id }}
+        <div> {{ list.user_id }} |
             <a href="{% url 'book_info' pk=list.book_id.pk %}">{{ list.book_id }}</a>
-            {{ list.category_id }}
+             | {{ list.category_id }}
         </div>
     {% endfor %}
-<a href = "{{back}}">Back</a>
+<a href = "/">На главную</a>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ from django.contrib.auth import login, logout
 from django.views.generic.base import View
 from django.http import HttpResponseRedirect
 from django import forms
-from .models import Profile, Book_in_library
+from .models import Profile, Book_in_library, Book_genre, Book_author
 from django.views.generic import ListView
 from django.db.models import Q
 
@@ -68,3 +68,14 @@ class BookForm(forms.ModelForm):
         model = Book_in_library
         fields = ('title', 'description', 'size', 'link',)
 
+
+class BookGenreForm(forms.ModelForm):
+    class Meta:
+        model = Book_genre
+        fields = ('book', 'genre',)
+
+
+class BookAuthorForm(forms.ModelForm):
+    class Meta:
+        model = Book_author
+        fields = ('book', 'author',)

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Информация</title>
 </head>
 <body>
     <div>
@@ -28,6 +28,9 @@
         {% for genre in genres %}
             {{ genre.genre }}
         {% endfor %}
+          {% if book.user_id == user %}
+        добавить
+        {% endif %}
     </div>
     <div>
         Авторы:
@@ -37,15 +40,19 @@
         {% for author in authors %}
             {{ author.author }}
         {% endfor %}
+        {% if book.user_id == user %}
+        добавить
+        {% endif %}
     </div>
     <div>
-        Uploaded on site by <a href="{% url 'user_info' pk=book.user_id.pk %}" >{{book.user_id}}</a>
+        Загружено пользователем: <a href="{% url 'user_info' pk=book.user_id.pk %}" >{{book.user_id}}</a>
     </div>
         {% if user.is_authenticated %}
         <div>
-            <a href="{% url 'book_list' pk=user.pk %}" class="middle-menu"><span><p>To my booklist</p></span></a>
+            <a href="{% url 'book_list' pk=user.pk %}" class="middle-menu"><span><p>Мой список книг</p></span></a>
         </div>
         {% endif %}
+
 <a href = "{{back}}">Back</a>
 </body>
 </html>
