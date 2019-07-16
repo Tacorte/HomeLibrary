@@ -1,3 +1,5 @@
+# coding=utf-8
+from django.shortcuts import render
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
@@ -5,13 +7,13 @@ from django.contrib.auth import login, logout
 from django.views.generic.base import View
 from django.http import HttpResponseRedirect
 from django import forms
-from .models import Profile
-
+from .models import Profile, Book_in_library
+from django.views.generic import ListView
+from django.db.models import Q
 
 
 class RegisterFormView(FormView):
     form_class = UserCreationForm
-
 
     # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
     # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
@@ -56,7 +58,13 @@ class LogoutView(View):
 
 
 class ProfileForm(forms.ModelForm):
-
     class Meta:
         model = Profile
         fields = ('name', 'surname', 'middle_name')
+
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model = Book_in_library
+        fields = ('title', 'description', 'size', 'link',)
+

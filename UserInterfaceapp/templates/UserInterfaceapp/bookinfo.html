@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        Название: {{book.title}}
+    </div>
+    <div>
+        {{book.description}}
+    </div>
+    <div>
+        Объем: {{book.size}}
+    </div>
+    <div>
+        Скачать: <a href="{{book.link}}" target="_blank">link</a>
+    </div>
+    <div>
+        Дата загрузки: {{book.download_date}}
+    </div>
+    <div>
+        Жанры:
+        {% if not genres %}
+            не указаны
+        {% endif %}
+        {% for genre in genres %}
+            {{ genre.genre }}
+        {% endfor %}
+    </div>
+    <div>
+        Авторы:
+        {% if not genres %}
+            не указаны
+        {% endif %}
+        {% for author in authors %}
+            {{ author.author }}
+        {% endfor %}
+    </div>
+    <div>
+        Uploaded on site by <a href="{% url 'user_info' pk=book.user_id.pk %}" >{{book.user_id}}</a>
+    </div>
+        {% if user.is_authenticated %}
+        <div>
+            <a href="{% url 'book_list' pk=user.pk %}" class="middle-menu"><span><p>To my booklist</p></span></a>
+        </div>
+        {% endif %}
+</body>
+</html>

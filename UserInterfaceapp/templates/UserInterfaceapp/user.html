@@ -5,20 +5,22 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <title>User info</title>
+    <title>Личный кабинет</title>
   </head>
   <body>
+  {% if user.pk == pk %}
+    <div>
+      <a href="{% url 'edit_profile' %}" class="top-menu"><span><p>Редактирование</p></span></a>
+    </div>
+  {% endif %}
   <div>
-    <a href="{% url 'edit_profile' %}" class="top-menu"><span><p>Edit profile</p></span></a>
+    <a href="{% url 'book_list' pk=profile.pk %}" class="middle-menu"><span><p>Список книг</p></span></a>
   </div>
-  <div>
-    <a href="{% url 'booklist' %}" class="middle-menu"><span><p>Booklist</p></span></a>
-  </div>
-    <p>Username = {{profile.user}} </p>
-    <p>Name: {{profile.name}}</p>
-    <p>Surname: {{profile.surname}}</p>
-    <p>Middle name: {{profile.middle_name}}</p>
-    <p>Date of registration: {{profile.date_of_registration}}</p>
-  <a href = "/">Back</a>
+    <p>Логин: {{profile.user}} </p>
+    <p>Имя: {{profile.name}}</p>
+    <p>Фамилия: {{profile.surname}}</p>
+    <p>Отчество: {{profile.middle_name}}</p>
+    <p>Дата регистрации: {{profile.date_of_registration}}</p>
+  <a href = "/">На главную</a>
   </body>
 </html>

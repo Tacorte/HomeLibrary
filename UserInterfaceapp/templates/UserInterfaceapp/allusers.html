@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for user in users %}
+        <div>
+            <a href="{% url 'user_info' pk=user.pk %}">{{ user }}</a>
+
+        </div>
+    {% endfor %}
+    <a href = "/">Back</a>
+</body>
+</html>

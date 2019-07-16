@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    {% for list in booklist %}
+        <div> {{ list.user_id }}
+            <a href="{% url 'book_info' pk=list.book_id.pk %}">{{ list.book_id }}</a>
+            {{ list.category_id }}
+        </div>
+    {% endfor %}
+
+
+</body>
+</html>

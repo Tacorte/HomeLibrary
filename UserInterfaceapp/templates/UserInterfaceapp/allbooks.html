@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for book in books %}
+        <div>
+            <a href="{% url 'book_info' pk=book.pk %}">{{ book }}</a>
+
+        </div>
+    {% endfor %}
+    <form action="{% url 'search' %}" class="navbar-form navbar-left" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <input type="text" name="q" class="form-control" placeholder="Введите запрос">
+        </div>
+          <button type="submit" class="btn btn-default">Поиск</button>
+    </form>
+    </div>
+    {% for place in object_list %}
+    <li>{{ place }}</li>
+        {% endfor %}
+    <a href = "/">Back</a>
+</body>
+</html>
