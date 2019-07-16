@@ -16,6 +16,6 @@ urlpatterns = [
     path('user/list', views.allusers, name='users_all'),
     path('book/list', views.allbooks, name='books_all'),
     path('book/add', views.book_add, name='book_new'),
-    path('search', views.book_search, name='search'),
+    # path('search', views.book_search, name='search'),
     # url(r'^list/', SearchForm.as_view(), name='search')
 ]

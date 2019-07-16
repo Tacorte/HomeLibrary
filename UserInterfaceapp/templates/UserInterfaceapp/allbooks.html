@@ -11,7 +11,7 @@
 
         </div>
     {% endfor %}
-    <form action="{% url 'search' %}" class="navbar-form navbar-left" method="post">
+    <form action="{% url 'books_all' %}" class="navbar-form navbar-left" method="post">
         {% csrf_token %}
         <div class="form-group">
           <input type="text" name="q" class="form-control" placeholder="Введите запрос">
@@ -19,9 +19,14 @@
           <button type="submit" class="btn btn-default">Поиск</button>
     </form>
     </div>
+    {% if ofject_list %}
+        Список найденных книг:
+    {% endif %}
     {% for place in object_list %}
-    <li>{{ place }}</li>
+
+    <a href="{% url 'book_info' pk=place.pk %}"><li>{{ place }}</li></a>
+
         {% endfor %}
-    <a href = "/">Back</a>
+    <a href = "..">Back</a>
 </body>
 </html>

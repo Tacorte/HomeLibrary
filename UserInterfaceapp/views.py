@@ -64,7 +64,16 @@ def allusers(request):
 
 def allbooks(request):
     books = Book_in_library.objects.all()
-    return render(request, 'UserInterfaceapp/allbooks.html', {'books': books})
+    if request.method == "GET":
+        return render(request, 'UserInterfaceapp/allbooks.html', {'books': books})
+    if request.method == "POST":
+        queryset = Book_in_library.objects.all()
+        q = request.POST.get("q")
+        object_list = None
+        if q:
+            object_list = queryset.filter(Q(title__icontains=q))
+        return render(request, 'UserInterfaceapp/allbooks.html', {'books': books, 'object_list': object_list})
+
 
 @login_required
 def book_add(request):
