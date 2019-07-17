@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from .models import *
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.db.models.functions import Lower
 
 
 def info(request):
@@ -102,12 +103,24 @@ def allbooks(request):
     if request.method == "GET":
         return render(request, 'UserInterfaceapp/all_book_list.html', {'books': books})
     if request.method == "POST":
-        queryset = Book_in_library.objects.all()
+        queryset1 = Book_in_library.objects.all()
+        queryset2 = Genre.objects.all()
+        queryset3 = Author.objects.all()
         q = request.POST.get("q")
-        object_list = None
+        object_list1 = None
+        object_list2 = None
+        object_list3 = None
+        print (queryset1)
+        print (queryset2)
         if q:
-            object_list = queryset.filter(Q(title__icontains=q))
-        return render(request, 'UserInterfaceapp/all_book_list.html', {'books': books, 'object_list': object_list})
+            object_list1 = queryset1.filter(Q(title__icontains=q))
+            object_list2 = queryset2.filter(Q(genre_name__icontains=q))
+            object_list3 = queryset3.filter(Q(name__icontains=q) | Q(surname__icontains=q) | Q(middle_name__icontains=q) | Q(nickname__icontains=q))
+            print (80)
+            print (object_list1)
+            print (object_list2)
+            print (80)
+        return render(request, 'UserInterfaceapp/all_book_list.html', {'books': books, 'object_list1': object_list1, 'object_list2': object_list2, 'object_list3': object_list3,})
 
 
 @login_required
@@ -123,17 +136,8 @@ def book_add(request):
             return redirect('book_info', pk=book.pk)
     else:
         book = BookForm()
+
     return render(request, 'UserInterfaceapp/book_edit.html', {'back': back, 'book': book})
-
-
-def book_search(request):
-    back = request.META.get('HTTP_REFERER')
-    queryset = Book_in_library.objects.all()
-    q = request.POST.get("q")
-    object_list = None
-    if q:
-        object_list = queryset.filter(Q(title__icontains=q))
-    return render(request, 'UserInterfaceapp/search.html', {'back': back, 'object_list': object_list})
 
 
 def genre_update(request, pk):
@@ -195,8 +199,6 @@ def genre_create(request, pk):
         if form.is_valid():
             genre = form.save(commit=False) # genre.genre_name
             is_in_list = Genre.objects.filter(genre_name__contains=genre.genre_name.lower())
-            print(genre.genre_name)
-            print(genre.genre_name.lower())
             if not is_in_list:
                 genre.save()
             return redirect('genre_update', pk=pk)

@@ -7,9 +7,9 @@ from django.db.models.signals import post_save
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=20)
-    surname = models.CharField(max_length=20)
-    middle_name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, blank=True)
+    surname = models.CharField(max_length=20, blank=True)
+    middle_name = models.CharField(max_length=20, blank=True)
     date_of_registration = models.DateTimeField(default=timezone.now)
 
     @receiver(post_save, sender=User)
@@ -66,9 +66,13 @@ class Book_in_library(models.Model):
     title = models.CharField(max_length=30)
     description = models.TextField(blank=True)
     size = models.IntegerField()
-    link = models.TextField()
+    link = models.CharField(max_length=100)
     download_date = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey('Profile', on_delete=models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        self.title = self.title.lower()
+        return super(Book_in_library, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title
