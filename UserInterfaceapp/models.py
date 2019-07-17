@@ -44,6 +44,10 @@ class BookList(models.Model):
 class Genre(models.Model):
     genre_name = models.CharField(max_length=20)
 
+    def save(self, *args, **kwargs):
+        self.genre_name = self.genre_name.lower()
+        return super(Genre, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.genre_name
 

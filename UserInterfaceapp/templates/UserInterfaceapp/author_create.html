@@ -9,12 +9,10 @@
 </head>
 <body>
     <form method="POST">{% csrf_token %}
-        {{ book_genre.as_p }}
+        {{ author.as_p }}
         <button type="submit" class="save btn btn-default">Сохранить</button>
     </form>
-    <div>
-        Отсутствует жанр? <a href="{% url 'genre_create' pk=pk %}">добавить</a>
-    </div>
+
 <a href = "{{back}}">Назад</a>
 </body>
 </html>

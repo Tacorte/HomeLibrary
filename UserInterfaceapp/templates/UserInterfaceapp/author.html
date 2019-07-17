@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <title>Автор</title>
+  </head>
+  <body>
+
+    <p>Имя: {{author.name}}</p>
+    <p>Фамилия: {{author.surname}}</p>
+    <p>Отчество: {{author.middle_name}}</p>
+    <p>Псевдоним: {{author.nickname}}
+        {% if not author.nickname %}
+            не указан
+        {% endif %}
+    </p>
+
+    <div>
+        Работы автора:
+        {% if not books %}
+        не указаны
+        {% endif %}
+        {% for book in books %}
+        <div>
+            <a href="{% url 'book_info' pk=book.book.pk %}">{{ book.book }}</a>
+        </div>
+    {% endfor %}
+    </div>
+    <p><a href = "{% url 'authors_all' %}">Назад</a></p>
+  </body>
+</html>

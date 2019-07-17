@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for genre in genres %}
+        <div>
+            <a href="{% url 'genre' pk=genre.pk %}">{{ genre }}</a>
+        </div>
+    {% endfor %}
+<div>
+    <p><a href = "/">На главную</a></p>
+</div>
+</body>
+</html>

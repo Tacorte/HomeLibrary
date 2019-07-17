@@ -22,6 +22,12 @@
     <p>Список зарегистрированных <a href="{% url 'users_all' %}">пользователей</a></p>
 </div>
 <div>
+    <p>Список <a href="{% url 'genres_all' %}">жанров</a></p>
+</div>
+<div>
+    <p>Список <a href="{% url 'authors_all' %}">авторов</a></p>
+</div>
+<div>
     Список доступных <a href="{% url 'books_all' %}">книг</a>
 </div>
 {% if user.is_authenticated %}

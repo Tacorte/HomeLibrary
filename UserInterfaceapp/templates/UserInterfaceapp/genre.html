@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        Книги в жанре : {{ genre }}
+    </div>
+    <div>
+        {% if not books %}
+            Отсутствуют
+        {% endif %}
+        {% for book in books %}
+        <div>
+            <a href="{% url 'book_info' pk=book.book.pk %}">{{ book.book }}</a>
+        </div>
+    {% endfor %}
+    </div>
+    <p><a href = "{% url 'genres_all' %}">Назад</a></p>
+</body>
+</html>

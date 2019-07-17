@@ -26,22 +26,22 @@
             не указаны
         {% endif %}
         {% for genre in genres %}
-            {{ genre.genre }}
+        <a href="{% url 'genre' pk=genre.genre.pk %}">{{ genre.genre }}</a>
         {% endfor %}
           {% if book.user_id == user %}
-        добавить
+        <a href="{% url 'genre_update' pk=book.pk %}">добавить</a>
         {% endif %}
     </div>
     <div>
         Авторы:
-        {% if not genres %}
+        {% if not authors %}
             не указаны
         {% endif %}
         {% for author in authors %}
-            {{ author.author }}
+            | <a href="{% url 'author' pk=author.author.pk %}">{{ author.author }}</a> |
         {% endfor %}
         {% if book.user_id == user %}
-        добавить
+        <a href="{% url 'author_update' pk=book.pk %}">добавить</a>
         {% endif %}
     </div>
     <div>
@@ -53,6 +53,7 @@
         </div>
         {% endif %}
 
-<a href = "{{back}}">Back</a>
+<a href = "{% url 'books_all' %}">К списку книг</a>
+    <p><a href = "{{back}}">Назад</a></p>
 </body>
 </html>
