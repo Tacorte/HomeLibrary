@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Информация</title>
+    {% include 'UserInterfaceApp/css.html' %}
 </head>
 <body>
     <div>
@@ -20,40 +21,50 @@
     <div>
         Дата загрузки: {{book.download_date}}
     </div>
-    <div>
+    <p><div>
         Жанры:
         {% if not genres %}
             не указаны
         {% endif %}
+        <table border="1"> <tr>
         {% for genre in genres %}
-        <a href="{% url 'genre' pk=genre.genre.pk %}">{{ genre.genre }}</a>
+        <td><a href="{% url 'genre' pk=genre.genre.pk %}">{{ genre.genre }}</a></td>
         {% endfor %}
-          {% if book.user_id == user %}
+        </tr></table>
+          {% if book.user_id == user.profile %}
         <a href="{% url 'genre_update' pk=book.pk %}">добавить</a>
         {% endif %}
-    </div>
-    <div>
+    </div></p>
+    <p><div>
         Авторы:
         {% if not authors %}
             не указаны
         {% endif %}
+        <table border="1"> <tr>
         {% for author in authors %}
-            | <a href="{% url 'author' pk=author.author.pk %}">{{ author.author }}</a> |
+            <td><a href="{% url 'author' pk=author.author.pk %}">{{ author.author }}</a></td>
         {% endfor %}
-        {% if book.user_id == user %}
+        </tr></table>
+        {% if book.user_id == user.profile %}
         <a href="{% url 'author_update' pk=book.pk %}">добавить</a>
         {% endif %}
-    </div>
+    </div></p>
     <div>
         Загружено пользователем: <a href="{% url 'user_info' pk=book.user_id.pk %}" >{{book.user_id}}</a>
     </div>
-        {% if user.is_authenticated %}
-        <div>
-            <a href="{% url 'book_list' pk=user.pk %}" class="middle-menu"><span><p>Мой список книг</p></span></a>
-        </div>
-        {% endif %}
+    {% if user.is_authenticated %}
+    <div>
+        <p>
+        <a href="{% url 'book_list' pk=user.pk %}" class="middle-menu">Мой список книг</a>
+         <br /><a href="{% url 'add_book_in_user_book_list' pk=book.pk %}">Добавить книгу в свой список книг</a>
+        </p>
+    </div>
+    {% endif %}
 
-<a href = "{% url 'books_all' %}">К списку книг</a>
-    <p><a href = "{{back}}">Назад</a></p>
+
+    <div>
+        <a href = "{% url 'books_all' %}">К списку книг</a>
+        <p><a href = "{{back}}">Назад</a></p>
+    </div>
 </body>
 </html>

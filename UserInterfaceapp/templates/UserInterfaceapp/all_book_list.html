@@ -2,57 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    {% include 'UserInterfaceApp/css.html' %}
+    <title>All book list</title>
 </head>
 <body>
+
     {% for book in books %}
         <div>
             <a href="{% url 'book_info' pk=book.pk %}">{{ book }}</a>
 
         </div>
     {% endfor %}
-    <form action="{% url 'books_all' %}" class="navbar-form navbar-left" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-          <input type="text" name="q" class="form-control" placeholder="Введите запрос">
-        </div>
-          <button type="submit" class="btn btn-default">Поиск</button>
-    </form>
-    </div>
-    {% if ofject_list %}
-        Список найденных книг:
-    {% endif %}
-<div>
-    По названию:
-    {% if not object_list1%}
-        не найдено
-    {% endif %}
 
-    {% for place in object_list1 %}
-    <a href="{% url 'book_info' pk=place.pk %}"><li>{{ place }}</li></a>
-    {% endfor %}
-</div>
-<div>
-    По жанру:
-    {% if not object_list2%}
-        не найдено
-    {% endif %}
-    {% for place in object_list2 %}
-    <a href="{% url 'genre' pk=place.pk %}"><li>{{ place }}</li></a>
-        {% endfor %}
-</div>
     <div>
-        По автору:
-        {% if not object_list3%}
-        не найдено
-        {% endif %}
-    {% for place in object_list3 %}
-    По автору:
-    <a href="{% url 'author' pk=place.pk %}"><li>{{ place }}</li></a>
-        {% endfor %}
-    </div>
-    <div>
-        <a href = "/">На главную</a>
+        <form action="{% url 'books_all' %}" class="navbar-form navbar-left" method="post" >
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="q" class="form-control" placeholder="Введите запрос">
+            </div>
+              <button type="submit" class="btn btn-default">Поиск</button>
+        </form>
+            Результат поиска:
+        <div>
+            По названию книги:
+            {% if not object_list1%}
+                не найдено
+            {% endif %}
+
+            {% for place in object_list1 %}
+            <a href="{% url 'book_info' pk=place.pk %}"><li>{{ place }}</li></a>
+            {% endfor %}
+        </div>
+        <div>
+            По жанру:
+            {% if not object_list2%}
+                не найдено
+            {% endif %}
+            {% for place in object_list2 %}
+            <a href="{% url 'genre' pk=place.pk %}"><li>{{ place }}</li></a>
+                {% endfor %}
+        </div>
+        <div>
+            По автору:
+            {% if not object_list3%}
+            не найдено
+            {% endif %}
+        {% for place in object_list3 %}
+        <a href="{% url 'author' pk=place.pk %}"><li>{{ place }}</li></a>
+            {% endfor %}
+        </div>
+        <div>
+                <a href = "/">На главную</a>
+        </div>
     </div>
 </body>
 </html>

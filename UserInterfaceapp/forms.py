@@ -91,3 +91,15 @@ class GenreForm(forms.ModelForm):
     class Meta:
         model = Genre
         fields = ('genre_name',)
+
+
+class UserBookListForm(forms.ModelForm):
+    class Meta:
+        model = BookList
+        fields = ('book', 'category')
+
+
+class UserAddToBookListForm(forms.ModelForm):
+    class Meta:
+        model = BookList
+        fields = ('category',)

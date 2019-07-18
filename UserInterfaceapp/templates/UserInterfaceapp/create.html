@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edition</title>
+    <title>Creation</title>
     {% include 'UserInterfaceApp/css.html' %}
 </head>
 <body>
-    <form method="POST" >{% csrf_token %}
-        {{ book.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Сохранить</button>
     </form>
+
 <a href = "{{back}}">Назад</a>
 </body>
 </html>

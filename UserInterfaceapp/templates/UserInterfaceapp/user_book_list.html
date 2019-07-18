@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
+    <title>Booklist</title>
+    {% include 'UserInterfaceApp/css.html' %}
 </head>
 <body>
     <div>
@@ -14,15 +11,19 @@
             В личном каталоге пользователя <a href="{% url 'user_info' pk=user.pk %}">{{ user }}</a> нет книг
         {% endif %}
     </div>
-    <div>
-        Имя | Название книги | Категория
-    </div>
+    <table border="1">
+        <tr><th>Имя пользователя</th> <th>Название книги</th> <th>Категория</th></tr>
     {% for list in booklist %}
-        <div> {{ list.user_id }} |
-            <a href="{% url 'book_info' pk=list.book_id.pk %}">{{ list.book_id }}</a>
-             | {{ list.category_id }}
-        </div>
+        <tr>
+            <td><a href="{% url 'user_info' pk=list.user_id.pk %}"> {{ list.user_id }} </a></td>
+            <td><a href="{% url 'book_info' pk=list.book.pk %}">{{ list.book }}</a> </td>
+            <td>{{ list.category }} </td>
+        </tr>
     {% endfor %}
+    </table>
+    {% if profile.pk == user.pk %}
+        <a href="{% url 'user_book_list_update' pk=user.pk %}"><p>добавить</p></a>
+    {% endif %}
 <a href = "/">На главную</a>
 
 </body>

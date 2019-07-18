@@ -34,8 +34,8 @@ class Category(models.Model):
 
 class BookList(models.Model):
     user_id = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    book_id = models.ForeignKey('Book_in_library', on_delete=models.CASCADE)
-    category_id = models.ForeignKey('Category', on_delete=models.CASCADE)
+    book = models.ForeignKey('Book_in_library', on_delete=models.CASCADE)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.user_id)+' '+str(self.book_id)+' '+str(self.category_id)
@@ -57,6 +57,13 @@ class Author(models.Model):
     surname = models.CharField(max_length=20)
     middle_name = models.CharField(max_length=20)
     nickname = models.CharField(max_length=20, blank=True)
+
+    def save(self, *args, **kwargs):
+        self.name = self.name.lower()
+        self.surname = self.surname.lower()
+        self.middle_name = self.middle_name.lower()
+        self.nickname = self.nickname.lower()
+        return super(Author, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name+' '+self.surname+' '+self.middle_name
