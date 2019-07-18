@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0d266d1-e09c-4eae-985f-62ba9a8b9869" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/css.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserInterfaceapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_authors.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_authors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_book_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_genres.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_genres.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author_create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/book_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/book_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/book_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/book_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/genre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/genre_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/genre_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/genre_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/profile_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/user_book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/user_book_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterfaceapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterfaceapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +26,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserInterfaceapp/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/create.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -58,15 +56,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_genres.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -109,15 +98,6 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_book_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_authors.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
@@ -169,11 +149,9 @@
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author_create.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/forms.py" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/urls.py" />
-        <option value="$PROJECT_DIR$/UserInterfaceapp/models.py" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/views.py" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/css.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/user_book_list.html" />
-        <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/user.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/search.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/register.html" />
@@ -190,6 +168,8 @@
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/all_book_list.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/book_info.html" />
         <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/author.html" />
+        <option value="$PROJECT_DIR$/UserInterfaceapp/models.py" />
+        <option value="$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html" />
       </list>
     </option>
   </component>
@@ -367,16 +347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserInterfaceapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="79" column="36" lean-forward="true" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UserInterfaceapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -384,13 +354,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -532,6 +495,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserInterfaceapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserInterfaceapp/templates/UserInterfaceapp/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>

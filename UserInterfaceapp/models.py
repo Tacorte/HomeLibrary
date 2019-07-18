@@ -54,8 +54,8 @@ class Genre(models.Model):
 
 class Author(models.Model):
     name = models.CharField(max_length=20)
-    surname = models.CharField(max_length=20)
-    middle_name = models.CharField(max_length=20)
+    surname = models.CharField(max_length=20, blank=True)
+    middle_name = models.CharField(max_length=20, blank=True)
     nickname = models.CharField(max_length=20, blank=True)
 
     def save(self, *args, **kwargs):
@@ -72,7 +72,7 @@ class Author(models.Model):
 class Book_in_library(models.Model):
     title = models.CharField(max_length=30)
     description = models.TextField(blank=True)
-    size = models.IntegerField()
+    size = models.PositiveIntegerField()
     link = models.CharField(max_length=100)
     download_date = models.DateTimeField(default=timezone.now)
     user_id = models.ForeignKey('Profile', on_delete=models.CASCADE)
