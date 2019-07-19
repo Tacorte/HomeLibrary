@@ -261,7 +261,9 @@ def user_book_list_update(request, pk):
             return redirect('book_list', pk=request.user.pk)
     else:
         book_list = UserBookListForm()
-    return render(request, 'UserInterfaceapp/create.html', {'back': back, 'form': book_list})
+        if request.user.pk!=pk:
+            return redirect('user_book_list_update', pk=request.user.pk)
+        return render(request, 'UserInterfaceapp/create.html', {'back': back, 'form': book_list})
 
 @login_required
 def add_book_in_user_book_list(request, pk):
@@ -271,7 +273,10 @@ def add_book_in_user_book_list(request, pk):
         if form.is_valid():
             book_list = form.save(commit=False)
             book_list.user_id = Profile.objects.get(pk=request.user.pk)
-            book_list.book = Book_in_library.objects.get(pk=pk)
+            try:
+                book_list.book = Book_in_library.objects.get(pk=pk)
+            except Book_in_library.DoesNotExist:
+                return redirect('books_all')
             check = BookList.objects.filter(user_id=request.user.profile).filter(
                 book=book_list.book).filter(category=book_list.category)
             if check:

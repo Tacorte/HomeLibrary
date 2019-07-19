@@ -8,7 +8,7 @@
 <body>
     <div>
         {% if not booklist %}
-            В личном каталоге пользователя <a href="{% url 'user_info' pk=user.pk %}">{{ user }}</a> нет книг
+            В личном каталоге пользователя <a href="{% url 'user_info' pk=profile.pk %}">{{ profile }}</a> нет книг
         {% endif %}
     </div>
     <table border="1">

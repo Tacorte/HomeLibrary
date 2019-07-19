@@ -71,7 +71,7 @@ class Author(models.Model):
 
 class Book_in_library(models.Model):
     title = models.CharField(max_length=30)
-    description = models.TextField(blank=True)
+    description = models.TextField(max_length=3000, blank=True)
     size = models.PositiveIntegerField()
     link = models.CharField(max_length=100)
     download_date = models.DateTimeField(default=timezone.now)
